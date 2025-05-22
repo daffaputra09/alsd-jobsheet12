@@ -86,7 +86,7 @@ public class DoubleLinkedLists06 {
 
     public void removeFirst() {
         if (isEmpty()) {
-            System.out.println("Linked List masih kosong!");
+            System.out.println("List kosong, tidak bisa dihapus.");
             return;
         }
         if (head == tail) {
@@ -99,7 +99,7 @@ public class DoubleLinkedLists06 {
 
     public void removeLast() {
         if (isEmpty()) {
-            System.out.println("Linked List masih kosong!");
+            System.out.println("List kosong, tidak bisa dihapus.");
             return;
         }
         if (head == tail) {
