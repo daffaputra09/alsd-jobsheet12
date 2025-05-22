@@ -89,12 +89,16 @@ public class DoubleLinkedLists06 {
             System.out.println("List kosong, tidak bisa dihapus.");
             return;
         }
+
+        Mahasiswa06 tmp = head.data;
         if (head == tail) {
             head = tail = null;
         } else {
             head = head.next;
             head.prev = null;
         }
+        System.out.println("Data sudah berhasil dihapus. Data yang terhapus adalah:");
+        tmp.tampil();
     }
 
     public void removeLast() {
@@ -102,11 +106,15 @@ public class DoubleLinkedLists06 {
             System.out.println("List kosong, tidak bisa dihapus.");
             return;
         }
+        
+        Mahasiswa06 tmp = tail.data;
         if (head == tail) {
             head = tail = null;
         } else {
             tail = tail.prev;
             tail.next = null;
         }
+        System.out.println("Data sudah berhasil dihapus. Data yang terhapus adalah:");
+        tmp.tampil();
     }
 }
