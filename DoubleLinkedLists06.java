@@ -229,4 +229,49 @@ public class DoubleLinkedLists06 {
         System.out.println("Data berhasil dihapus. Data yang terhapus adalah:");
         tmp.tampil();
     }
+
+    public void getFirst() {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong!");
+            return;
+        }
+        System.out.println("Data mahasiswa di posisi awal:");
+        head.data.tampil();
+    }
+
+    public void getLast() {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong!");
+            return;
+        }
+        System.out.println("Data mahasiswa di posisi akhir:");
+        tail.data.tampil();
+    }
+
+    public void getIndex(int index) {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong!");
+            return;
+        }
+
+        if (index < 0) {
+            System.out.println("Indeks tidak valid!");
+            return;
+        }
+
+        Node06 current = head;
+        int i = 0;
+        while (i < index && current != null) {
+            current = current.next;
+            i++;
+        }
+
+        if (current == null) {
+            System.out.println("Indeks melebihi panjang linked list!");
+            return;
+        }
+
+        System.out.println("Data mahasiswa di indeks ke-" + index + ":");
+        current.data.tampil();
+    }
 }
