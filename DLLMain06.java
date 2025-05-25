@@ -21,6 +21,7 @@ public class DLLMain06 {
             System.out.println("11. Tampilkan data pertama");
             System.out.println("12. Tampilkan data terakhir");
             System.out.println("13. Tampilkan data pada indeks tertentu");
+            System.out.println("14. Tampilkan jumlah data");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilihan = scan.nextInt();
@@ -80,6 +81,9 @@ public class DLLMain06 {
                     int index = scan.nextInt();
                     scan.nextLine();
                     list.getIndex(index);
+                }
+                case 14 -> {
+                    System.out.println("Jumlah data dalam list: " + list.size() + " data");
                 }
                 case 0 -> System.out.println("Keluar dari program.");
                 default -> System.out.println("Pilihan tidak valid!");

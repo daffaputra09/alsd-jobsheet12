@@ -274,4 +274,14 @@ public class DoubleLinkedLists06 {
         System.out.println("Data mahasiswa di indeks ke-" + index + ":");
         current.data.tampil();
     }
+
+    public int size() {
+        int count = 0;
+        Node06 current = head;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
 }
