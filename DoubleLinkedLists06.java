@@ -188,4 +188,45 @@ public class DoubleLinkedLists06 {
         System.out.println("Data berhasil dihapus. Data yang terhapus adalah:");
         tmp.tampil();
     }
+
+    public void remove(int index) {
+        if (isEmpty()) {
+            System.out.println("List kosong!");
+            return;
+        }
+
+        if (index < 0) {
+            System.out.println("Indeks tidak valid!");
+            return;
+        }
+
+        if (index == 0) {
+            removeFirst();
+            return;
+        }
+
+        Node06 current = head;
+        int i = 0;
+        while (i < index && current != null) {
+            current = current.next;
+            i++;
+        }
+
+        if (current == null) {
+            System.out.println("Indeks melebihi panjang linked list!");
+            return;
+        }
+
+        Mahasiswa06 tmp = current.data;
+        if (current == tail) {
+            removeLast();
+            return;
+        } else {
+            current.prev.next = current.next;
+            current.next.prev = current.prev;
+        }
+
+        System.out.println("Data berhasil dihapus. Data yang terhapus adalah:");
+        tmp.tampil();
+    }
 }
