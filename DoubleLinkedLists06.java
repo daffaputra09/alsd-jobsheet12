@@ -117,4 +117,41 @@ public class DoubleLinkedLists06 {
         System.out.println("Data sudah berhasil dihapus. Data yang terhapus adalah:");
         tmp.tampil();
     }
+
+    public void add(Mahasiswa06 data, int index) {
+        if (index < 0) {
+            System.out.println("Indeks tidak valid!");
+            return;
+        }
+
+        if (index == 0) {
+            addFirst(data);
+            return;
+        }
+
+        Node06 current = head;
+        int i = 0;
+        while (i < index - 1 && current != null) {
+            current = current.next;
+            i++;
+        }
+
+        if (current == null) {
+            System.out.println("Indeks melebihi panjang linked list!");
+            return;
+        }
+
+        if (current == tail) {
+            addLast(data);
+            return;
+        }
+
+        Node06 newNode = new Node06(data);
+        newNode.next = current.next;
+        newNode.prev = current;
+        current.next.prev = newNode;
+        current.next = newNode;
+        System.out.println("Data berhasil ditambahkan pada indeks " + index);
+    }
+    
 }
