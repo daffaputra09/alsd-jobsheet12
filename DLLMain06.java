@@ -16,6 +16,7 @@ public class DLLMain06 {
             System.out.println("6. Cari Mahasiswa berdasarkan NIM");
             System.out.println("7. Tambah setelah NIM tertentu");
             System.out.println("8. Tambah pada indeks tertentu");
+            System.out.println("9. Hapus setelah NIM tertentu");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilihan = scan.nextInt();
@@ -56,6 +57,11 @@ public class DLLMain06 {
                     scan.nextLine();
                     Mahasiswa06 mhs = inputMahasiswa(scan);
                     list.add(mhs, index);
+                }
+                case 9 -> {
+                    System.out.print("Masukkan NIM: ");
+                    String keyNim = scan.nextLine();
+                    list.removeAfter(keyNim);
                 }
                 case 0 -> System.out.println("Keluar dari program.");
                 default -> System.out.println("Pilihan tidak valid!");

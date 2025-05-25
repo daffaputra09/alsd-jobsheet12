@@ -66,8 +66,9 @@ public class DoubleLinkedLists06 {
             System.out.println("Linked list masih kosong!");
         } else {
             Node06 tmp = head;
+            System.out.println("Data Mahasiswa:");
             while (tmp != null) {
-                System.out.println(tmp.data);
+                tmp.data.tampil();
                 tmp = tmp.next;
             }
         }
@@ -154,4 +155,37 @@ public class DoubleLinkedLists06 {
         System.out.println("Data berhasil ditambahkan pada indeks " + index);
     }
     
+    public void removeAfter(String keyNim) {
+        if (isEmpty()) {
+            System.out.println("List kosong!");
+            return;
+        }
+
+        Node06 current = head;
+        while (current != null && !current.data.nim.equals(keyNim)) {
+            current = current.next;
+        }
+
+        if (current == null) {
+            System.out.println("Node dengan NIM " + keyNim + " tidak ditemukan!");
+            return;
+        }
+
+        if (current.next == null) {
+            System.out.println("Tidak ada node setelah node dengan NIM " + keyNim);
+            return;
+        }
+
+        Mahasiswa06 tmp = current.next.data;
+        if (current.next == tail) {
+            current.next = null;
+            tail = current;
+        } else {
+            current.next = current.next.next;
+            current.next.prev = current;
+        }
+        
+        System.out.println("Data berhasil dihapus. Data yang terhapus adalah:");
+        tmp.tampil();
+    }
 }
